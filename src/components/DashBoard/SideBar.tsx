@@ -15,13 +15,13 @@ const SideBar = () => {
         </Icon>
         <Image src={img} />
       </Top>
-      <Home to="/dashboard/home">
+      <Home to="/dashboard">
         <Icon2>
           <ImHome2 />
         </Icon2>
         <Text>Home</Text>
       </Home>
-      <Home2 to="/dashboard/savings">
+      <Home2 to="/savings">
         <Icon2>
           <FiTarget />
         </Icon2>
