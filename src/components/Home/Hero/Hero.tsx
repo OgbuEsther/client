@@ -108,26 +108,29 @@ const One = styled.img`
   border-radius: 20px;
 `;
 
-const Buttons = styled.div`
+const Buttons = styled.button`
   margin: 5px;
   height: 50px;
   width: 180px;
+  border: 1px solid gray;
   background-color: white;
   color: black;
   justify-content: center;
   align-items: center;
   display: flex;
   font-size: 15px;
-  border: 1px solid black;
   font-weight: 500;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
-  border: none;
+
+  :hover {
+    border: 0.5px solid darkgray;
+    margin-top: -3px;
+  }
 `;
 
 const Button = styled(Link)`
-  margin: 5px;
   height: 50px;
   width: 220px;
   background-color: #0c1825;
@@ -144,6 +147,9 @@ const Button = styled(Link)`
   cursor: pointer;
   transition: all 400ms;
   border: 1px solid black;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   :hover {
     background-color: #0d5ed4;
@@ -162,7 +168,9 @@ const Sub = styled.div`
   color: #5a3535;
   margin: 15px;
   font-family: "DM Sans";
+  font-size: 20px;
   vertical-align: baseline;
+  line-height: 30px;
   text-decoration: none solid rgb(53, 53, 53);
   font-weight: 500;
   color: rgb(53, 53, 53);
