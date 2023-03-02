@@ -33,13 +33,15 @@ const Chats:React.FC<props> = ({date,name,message,image}) => {
 export default Chats
 const Message = styled.div`
 margin: 0;
-font-size: 13px;
+font-size: 12px;
 letter-spacing: 1px;
 max-width: 400px;
+color: grey;
 `
 
 const Name = styled.div`
-font-size: 15px;
+font-size: 18px;
+color:grey;
 `
 
 const Card = styled.div`

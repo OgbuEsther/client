@@ -17,7 +17,12 @@ const HomeScreen = () => {
       <br />
       <br />
       <br />
+      <br />
+
       <Priority />
+      <br />
+      <br />
+      <br />
       <Build />
       <Investment />
       <Meet />
