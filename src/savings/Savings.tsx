@@ -19,7 +19,10 @@ const Savings = () => {
           </Left>
         </Top>
         <Middle>
-          <One></One>
+          <One>
+            <p>Total Balance </p>
+            <h1>₦0.00</h1>
+          </One>
           <Two></Two>
         </Middle>
         {/* <Cards />
@@ -34,10 +37,33 @@ export default Savings;
 const Two = styled.div``;
 
 const One = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   /* padding: 100px; */
-  width: 500px;
-  height: 100px;
-  border: 1px solid darkgray;
+  width: 700px;
+  height: 150px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+
+  p {
+    color: #718096;
+    font-family: Karla, sans-serif;
+    font-size: 0.875rem;
+    margin: 0;
+    margin-left: 15px;
+    margin-bottom: 7px;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: U8, sans-serif;
+
+    margin: 0;
+    margin-left: 15px;
+    margin-bottom: 7px;
+    color: #083e9e;
+  }
 `;
 
 const Middle = styled.div`
