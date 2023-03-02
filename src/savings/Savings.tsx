@@ -27,12 +27,12 @@ const Savings = () => {
           <Two></Two>
         </Middle>
         <Bottom>
-          <CardProps />
-          <CardProps />
-          <CardProps />
-          <CardProps />
-          <CardProps />
-          <CardProps />
+          <CardProps h1="" p="" naira="" bg="" icn="" />
+          <CardProps h1="" p="" naira="" bg="" icn="" />
+          <CardProps h1="" p="" naira="" bg="" icn="" />
+          <CardProps h1="" p="" naira="" bg="" icn="" />
+          <CardProps h1="" p="" naira="" bg="" icn="" />
+          <CardProps h1="" p="" naira="" bg="" icn="" />
         </Bottom>
       </Wrapper>
     </Container>
