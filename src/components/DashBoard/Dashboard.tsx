@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-
-import Home from "./Home";
+import Routes from "../AllRoutes/dashboardRoutes";
 import SideBar from "./SideBar";
 
 const Dashboard = () => {
   return (
     <Container>
       <SideBar />
-      <Home />
+      <Routes />
     </Container>
   );
 };
