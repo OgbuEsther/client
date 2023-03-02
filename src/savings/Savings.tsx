@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../Assets/person.png";
+import CardProps from "./CardProps";
 // import Cards from "./Cards";
 // import Todo from "./Todo";
 
@@ -25,14 +26,25 @@ const Savings = () => {
           </One>
           <Two></Two>
         </Middle>
-        {/* <Cards />
-        <Todo /> */}
+        <Bottom>
+          <CardProps />
+          <CardProps />
+          <CardProps />
+          <CardProps />
+          <CardProps />
+          <CardProps />
+        </Bottom>
       </Wrapper>
     </Container>
   );
 };
 
 export default Savings;
+
+const Bottom = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Two = styled.div``;
 
