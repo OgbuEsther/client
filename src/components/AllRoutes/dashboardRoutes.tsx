@@ -6,7 +6,7 @@ import Home from "../DashBoard/Home";
 const Routes = () => {
   let element = useRoutes([
     {
-      path: "/",
+      path: "/home",
       element: <Home />,
     },
     {
