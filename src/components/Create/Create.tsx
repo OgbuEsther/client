@@ -9,7 +9,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query/build/lib/useMutation";
+import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../Api/Api";
 import { useDispatch } from "react-redux";
 import { UseAppDispach } from "../../Global/Store";
