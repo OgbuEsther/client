@@ -8,11 +8,13 @@ import piggy from "../Assets/piggy.svg";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query/build/lib/useMutation";
 import { createUser } from "../Api/Api";
 import { useDispatch } from "react-redux";
 import { UseAppDispach } from "../../Global/Store";
+import { registerUser } from "../../Global/ReduxState";
+import Swal from "sweetalert2";
 
 const Create = () => {
   const dispatch = UseAppDispach();
@@ -49,13 +51,22 @@ const Create = () => {
 
     onSuccess: (myData) => {
       // console.log("user", myData);
-      useDispatch(User(myData.data));
+      dispatch(registerUser(myData.data));
       navigate("/dashboard");
     },
   });
 
-  const Submit = handleSubmit(() => {
-    reset();
+  const Submit = handleSubmit(async (data) => {
+    posting.mutate(data);
+    Swal.fire({
+      icon: "success",
+      title: "registration successful",
+    });
+    // await axios.post(`${localUrl}/api/user/register`, data).then((res) => {
+    // console.log(res);
+    // });
+
+    // reset()
   });
   return (
     <Container>
