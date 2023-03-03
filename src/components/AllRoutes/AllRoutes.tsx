@@ -3,8 +3,10 @@ import { useRoutes } from "react-router-dom";
 import Login from "../Auth/Login/Login";
 import Register from "../Auth/Register/Register";
 import Dashboard from "../DashBoard/Dashboard";
-import SavingsDashboard from "../DashBoard/SavingsDashboard";
+// import DashBoard from "../DashBoard/Dashboard";
+
 import HomeScreen from "../HomeScreen/HomeScreen";
+import SavingsDashboard from "../SavingsDashboard/SavingsDashboard";
 
 const AllRoutes = () => {
   let element = useRoutes([

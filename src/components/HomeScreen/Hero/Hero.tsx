@@ -9,7 +9,7 @@ import { FaGooglePlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import appleIcon from "../../Assets/apple-icon.svg";
 import googleIcon from "../../Assets/google-icon.svg";
-import nice from "../../Assets/one.png";
+import nice from "../../Assets/nice1.jpg";
 
 const Hero = () => {
   return (
@@ -42,7 +42,7 @@ const Hero = () => {
             </ButtonHold>
           </First>
           <Second>
-            <One src={nice} />
+            <One src={one} />
             <Two src={two} />
             <Three src={three} />
             <Four src={four} />
@@ -108,11 +108,10 @@ const One = styled.img`
   border-radius: 20px;
 `;
 
-const Buttons = styled.button`
+const Buttons = styled.div`
   margin: 5px;
   height: 50px;
   width: 180px;
-  border: 1px solid gray;
   background-color: white;
   color: black;
   justify-content: center;
@@ -123,14 +122,19 @@ const Buttons = styled.button`
   border-radius: 10px;
   cursor: pointer;
   outline: none;
+  border: none;
+  border: 1px solid black;
+  margin-top: 10px;
+  transition: all 400ms;
 
   :hover {
-    border: 0.5px solid darkgray;
-    margin-top: -3px;
+    margin-top: -2px;
+    transform: scale(0.99);
   }
 `;
 
 const Button = styled(Link)`
+  margin: 5px;
   height: 50px;
   width: 220px;
   background-color: #0c1825;
@@ -147,9 +151,6 @@ const Button = styled(Link)`
   cursor: pointer;
   transition: all 400ms;
   border: 1px solid black;
-
-  margin-top: 20px;
-  margin-bottom: 20px;
 
   :hover {
     background-color: #0d5ed4;
@@ -168,9 +169,7 @@ const Sub = styled.div`
   color: #5a3535;
   margin: 15px;
   font-family: "DM Sans";
-  font-size: 20px;
   vertical-align: baseline;
-  line-height: 30px;
   text-decoration: none solid rgb(53, 53, 53);
   font-weight: 500;
   color: rgb(53, 53, 53);
@@ -180,7 +179,7 @@ const Img = styled.img``;
 
 const Title = styled.div`
   font-size: 4.6em;
-  font-weight: 500;
+  font-weight: 800;
   line-height: 70px;
   color: rgb(12, 24, 37);
 `;
@@ -205,5 +204,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: -80px;
   /* background-color: red; */
 `;

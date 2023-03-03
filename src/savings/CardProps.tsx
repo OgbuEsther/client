@@ -14,8 +14,8 @@ const CardProps: React.FC<props> = ({ h1, p, icn, naira, bg }) => {
     <div>
       <Container>
         <Card bg={bg}>
-          <Icn></Icn>
-          <h1>{h1} </h1>
+          <Icn>{icn} </Icn>
+          <h4>{h1} </h4>
           <p>{p}</p>
           <Naira>{naira} </Naira>
         </Card>
@@ -31,9 +31,15 @@ const Naira = styled.div``;
 const Icn = styled.div``;
 
 const Card = styled.div<{ bg: string }>`
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  padding: 20px;
+  padding-top: 10px;
+  height: 200px;
   background-color: ${(props) => props.bg};
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 `;
 
 const Container = styled.div``;

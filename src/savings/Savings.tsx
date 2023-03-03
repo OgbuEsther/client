@@ -4,6 +4,7 @@ import img from "../Assets/person.png";
 import CardProps from "./CardProps";
 // import Cards from "./Cards";
 // import Todo from "./Todo";
+import { BsFillShieldFill } from "react-icons/bs";
 
 const Savings = () => {
   return (
@@ -27,12 +28,48 @@ const Savings = () => {
           <Two></Two>
         </Middle>
         <Bottom>
-          <CardProps h1="" p="" naira="" bg="" icn="" />
-          <CardProps h1="" p="" naira="" bg="" icn="" />
-          <CardProps h1="" p="" naira="" bg="" icn="" />
-          <CardProps h1="" p="" naira="" bg="" icn="" />
-          <CardProps h1="" p="" naira="" bg="" icn="" />
-          <CardProps h1="" p="" naira="" bg="" icn="" />
+          <CardProps
+            h1="Piggybank"
+            p="Strict savings automatically. Daily, weekly or Monthly. 10% p.a"
+            naira="₦0.00"
+            bg="rgb(204, 240, 254)"
+            icn=""
+          />
+          <CardProps
+            h1="Flex Naira"
+            p="Flexible savings for emergencies. Free transfers, withdrawals etc. 8% p.a"
+            naira="₦0.00"
+            bg="rgb(231, 67, 156)"
+            icn=""
+          />
+          <CardProps
+            h1="Safelock"
+            p="Lock funds to avoid temptations. Upfront interest. Up to 13% p.a"
+            naira="₦0.00"
+            bg="rgb(231, 246, 255)"
+            icn=""
+          />
+          <CardProps
+            h1="Targets"
+            p="Reach your unique individual saving goals. 9% p.a"
+            naira="₦0.00"
+            bg="rgb(220, 255, 235)"
+            icn=""
+          />
+          <CardProps
+            h1="Flex Dollar"
+            p="Save & grow your wealth in dollars. Up to 7% p.a in dollars"
+            naira="₦0.00"
+            bg="rgb(239, 244, 245)"
+            icn=""
+          />
+          <CardProps
+            h1="PocketApp"
+            p="Withdraw your savings to your pocket faster ⚡️"
+            naira="₦0.00"
+            bg="rgb(241, 236, 254)"
+            icn=""
+          />
         </Bottom>
       </Wrapper>
     </Container>
@@ -44,6 +81,7 @@ export default Savings;
 const Bottom = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 30px;
 `;
 
 const Two = styled.div``;

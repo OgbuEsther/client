@@ -1,14 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import AllRoutes from "./components/AllRoutes/AllRoutes";
+import Allroute from "./components/Allroute";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <AllRoutes />
+      {/* <Allroutes /> */}
+      <Allroute />
     </div>
   );
-}
+};
 
 export default App;
