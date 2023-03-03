@@ -9,8 +9,15 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query/build/lib/useMutation";
+import { createUser } from "../Api/Api";
+import { useDispatch } from "react-redux";
+import { UseAppDispach } from "../../Global/Store";
 
 const Create = () => {
+  const dispatch = UseAppDispach();
+  const navigate = useNavigate();
+
   const schema = yup
     .object({
       name: yup.string().required("field must be required"),
@@ -34,6 +41,17 @@ const Create = () => {
     register,
   } = useForm<formData>({
     resolver: yupResolver(schema),
+  });
+
+  const posting = useMutation({
+    mutationKey: ["created"],
+    mutationFn: createUser,
+
+    onSuccess: (myData) => {
+      // console.log("user", myData);
+      useDispatch(User(myData.data));
+      navigate("/dashboard");
+    },
   });
 
   const Submit = handleSubmit(() => {
