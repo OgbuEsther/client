@@ -1,13 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { userData } from "../interfaces/userInterfaces";
+import { PayloadAction } from "@reduxjs/toolkit/dist/createAction";
 
-const initialState = {};
+const initialState = {
+  currentUser: {} as userData | null,
+};
 
 const ReduxState = createSlice({
-  name: "second",
+  name: "piggyvest",
   initialState,
-  reducers: {},
+  reducers: {
+    registerUser: (state, { payload }: PayloadAction<userData>) => {
+      state.currentUser = payload;
+    },
+    logout: (state) => {
+      state.currentUser = null;
+    },
+  },
 });
 
-export const {} = ReduxState.actions;
+export const { registerUser, logout } = ReduxState.actions;
 
 export default ReduxState.reducer;
