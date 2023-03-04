@@ -94,6 +94,11 @@ const Create = () => {
           <p>{errors?.name && errors?.name?.message}</p>
         </Inputhold>
         <Inputhold>
+          <Email>username</Email>
+          <Input {...register("userName")} placeholder="username" type="text" />
+          <p>{errors?.userName && errors?.userName?.message}</p>
+        </Inputhold>
+        <Inputhold>
           <Email>Email</Email>
           <Input
             {...register("email")}
