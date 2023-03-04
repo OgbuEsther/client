@@ -20,6 +20,7 @@ export const createUser = async ({
       phoneNumber,
     })
     .then((res) => {
+      console.log(res.data);
       return res.data;
     });
 };
