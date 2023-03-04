@@ -18,7 +18,7 @@ const Allroute = () => {
       element: <Homescreen />,
     },
     {
-      path: "/signup",
+      path: "/create",
       element: <Create />,
     },
     {
