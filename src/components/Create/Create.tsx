@@ -11,7 +11,6 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../Api/Api";
-import { useDispatch } from "react-redux";
 import { UseAppDispach } from "../../Global/Store";
 import { registerUser } from "../../Global/ReduxState";
 import Swal from "sweetalert2";
@@ -46,11 +45,11 @@ const Create = () => {
   });
 
   const posting = useMutation({
-    mutationKey: ["created"],
+    mutationKey: ["createdUser"],
     mutationFn: createUser,
 
     onSuccess: (myData) => {
-      // console.log("user", myData);
+      console.log("user", myData);
       dispatch(registerUser(myData.data));
       navigate("/dashboard");
     },
@@ -174,6 +173,10 @@ const Inputhold = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+
+  p {
+    margin: 0;
+  }
 `;
 const P = styled.div`
   p {
@@ -207,7 +210,7 @@ const Acc = styled.div`
 `;
 const Card = styled.form`
   width: 380px;
-  height: 960px;
+  /* height: 960px; */
   background-color: white;
   margin-top: 30px;
   border-top-left-radius: 15px;
@@ -216,6 +219,7 @@ const Card = styled.form`
   padding: 40px;
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
   flex-direction: column;
   p {
     color: red;
