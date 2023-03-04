@@ -11,12 +11,12 @@ import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../Api/Api";
-import { UseAppDispach } from "../../Global/Store";
+import { UseAppDispatch } from "../../Global/Store";
 import { registerUser } from "../../Global/ReduxState";
 import Swal from "sweetalert2";
 
 const Create = () => {
-  const dispatch = UseAppDispach();
+  const dispatch = UseAppDispatch();
   const navigate = useNavigate();
 
   const schema = yup
@@ -24,12 +24,8 @@ const Create = () => {
       name: yup.string().required("field must be required"),
       userName: yup.string().required("field must be required"),
       email: yup.string().required("field must be required"),
-      phoneNumber: yup.number().min(11).required("field must be required"),
-      password: yup.string().min(9).required(),
-      confirmpassword: yup
-        .string()
-        .oneOf([yup.ref("password")])
-        .required(),
+      phoneNumber: yup.number().required("field must be required"),
+      password: yup.string().min(6).required(),
     })
     .required();
 
@@ -45,8 +41,8 @@ const Create = () => {
   });
 
   const posting = useMutation({
-    mutationKey: ["createdUser"],
     mutationFn: createUser,
+    mutationKey: ["createdUser"],
 
     onSuccess: (myData) => {
       console.log("user", myData);
@@ -55,17 +51,26 @@ const Create = () => {
     },
   });
 
-  const Submit = handleSubmit(async (data) => {
+  const Submit = handleSubmit((data) => {
+    console.log(`button dey work`);
     posting.mutate(data);
+
+    console.log(data);
+    reset();
     Swal.fire({
+      position: "center",
       icon: "success",
-      title: "registration successful",
+      title: "signed up successfully",
+      showConfirmButton: false,
+      timer: 2500,
     });
     // await axios.post(`${localUrl}/api/user/register`, data).then((res) => {
     // console.log(res);
     // });
+  });
 
-    // reset()
+  const submit = handleSubmit((data) => {
+    posting.mutate(data);
   });
   return (
     <Container>
@@ -115,7 +120,7 @@ const Create = () => {
           />
           <p>{errors?.password && errors?.password?.message}</p>
         </Inputhold>
-        <Inputhold>
+        {/* <Inputhold>
           <Email>Confirm Password</Email>
           <Input
             {...register("confirmpassword")}
@@ -123,7 +128,7 @@ const Create = () => {
             type="password"
           />
           <p>{errors?.confirmpassword && errors?.confirmpassword?.message}</p>
-        </Inputhold>
+        </Inputhold> */}
         <Button type="submit">CREATE ACCOUNT</Button>
       </Card>
       <NavLink to="/" style={{ textDecoration: "none" }}>

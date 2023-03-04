@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { userData } from "../../interfaces/userInterfaces";
 
-const localUrl = "http://localhost:6400";
+const endPoint = "http://localhost:6400";
 
 export const createUser = async ({
   name,
@@ -10,9 +10,9 @@ export const createUser = async ({
   password,
   userName,
   phoneNumber,
-}: any) => {
+}: userData) => {
   return await axios
-    .post(`${localUrl}/api/user/signup`, {
+    .post(`${endPoint}/api/user/signup`, {
       name,
       email,
       password,

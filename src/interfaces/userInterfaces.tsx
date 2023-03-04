@@ -4,4 +4,6 @@ export interface userData {
   password: string;
   userName: string;
   phoneNumber: number;
+  // _id: string;
+  // wallet: [];
 }
